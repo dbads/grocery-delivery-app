@@ -1,0 +1,18 @@
+{
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    // Example value in megabytes (4GB)
+    "typescript.tsserver.maxTsServerMemory": 4096,
+    "files.exclude": {
+        "**/.git": true, // Exclude Git folder
+        "**/node_modules": true, // Exclude Node.js modules
+        "**/dist": true, // Exclude build output folders
+        // Add more exclusions as needed
+    },
+    // "files.autoSave": "off", // Disable autosave
+    "files.watcherExclude": {
+        "**/.git/objects/**": true, // Exclude Git objects folder from file watching
+        // Add more watcher exclusions as needed
+    }
+}

@@ -1,0 +1,2 @@
+// clear cache of nodemon
+// nodemon --clear-cache

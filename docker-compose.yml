@@ -1,0 +1,18 @@
+version: '3.9'
+services:
+  redis:
+    image: 'redis:alpine'
+  apigateway:
+    build: . #path of dockerfile for this service
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/usr/apigateway/ # path/on/host:path/on/container, it means that 
+      # /usr/apigateway/src path on contaier will be mounted from the path ./src on host
+      # which means whatever is inside ./src on  host will be reflected in the /usr/apigateway/src in the container
+      # the host path is relative to the docker-compose.yml file
+    restart: always
+    healthcheck:
+        test: ["CMD-SHELL", "curl --fail http://localhost:3000/user/test || exit 1"]
+        interval: 30s
+        retries: 3
